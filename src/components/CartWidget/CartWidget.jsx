@@ -6,9 +6,9 @@ const CartWidget = () => {
     }
     
     return (
-        <div style= {{backgroundColor: "white", color:"black", borderRadius:5, padding: 5, fontWeight:500}}>
+        <div className="bg-white text-black rounded-lg font-bold p-2 flex justify-between items-center mx-auto">
             <img src={cart} alt="cart-widget" style= {{width:40, height:40,}} />
-            0
+            <p className="w-1/2 font-bold text-xl">0</p>
         </div>
     )
 }
