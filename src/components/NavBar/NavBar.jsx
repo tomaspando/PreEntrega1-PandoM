@@ -25,13 +25,13 @@ const NavBar = () => {
             </Navbar.Brand>
         </Link>
         <ul className="flex items-center gap-4 text-white	uppercase mr-12">
-                <NavLink to="/category/men's%20clothing" className="hover:text-red-600">
-                  Hombre
+                <NavLink to="/category/remeras" className="font-bold hover:text-red-600">
+                  Remeras
                 </NavLink>
-                <NavLink className="hover:text-red-600" to="/category/women's%20clothing" >
-                  Mujer
+                <NavLink className="font-bold hover:text-red-600" to="/category/gorras" >
+                  Gorras
                 </NavLink>
-                <NavLink to="/category/electronics" className="hover:text-red-600"> 
+                <NavLink to="/category/equipamiento" className="font-bold hover:text-red-600"> 
                   Equipamiento
                 </NavLink>
               </ul>

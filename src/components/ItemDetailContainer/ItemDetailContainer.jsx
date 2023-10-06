@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
+import {getFirestore, doc, getDoc} from "firebase/firestore"
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
+import {db} from "../../firebase/config"
+
 
 
 function ItemDetailContainer() {
@@ -9,20 +12,17 @@ function ItemDetailContainer() {
     
     const [products, setProducts] = useState([])
     const {id} = useParams()
-    let url = `https://fakestoreapi.com/products/${id}`
-    console.log(id)
-    console.log(url)
+    
     useEffect (() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(res => setProducts(res))
+        //const querydb = getFirestore()
+        const queryDoc = doc(db, "productos",id)
+        getDoc(queryDoc)
+            .then(res => setProducts({id: res.id, ...res.data()}))
     },[id])
-
-    console.log(url)
 
     return (
         <div className='grid gap-4 grid-cols-3 grid-rows-3'>
-            <ItemDetail key={products.id} product={products}/>
+            <ItemDetail key={products.id} products={products}/>
         </div>
     )
 }

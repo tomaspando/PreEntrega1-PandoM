@@ -1,22 +1,32 @@
-import React from 'react'
 import ItemList from '../ItemDetailContainer/ItemDetailContainer'
 import { Button, Card } from 'react-bootstrap'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useCartContext } from '../../Context/CartContext'
 
 
-const ItemDetail = ({product}) => {
+const ItemDetail = ({products}) => {
+  const [goToCart, setGoToCart] = useState(false)
+  const {addProduct} = useCartContext()
+
+  const onAdd = (quantity) => {
+    setGoToCart(true)
+    addProduct(products, quantity)
+  }
+  
   return (
     <div className='flex items-center justify-center min-h-screen container mx-auto w-50'>        
         <div className='rounded-xl shadow-lg'>
           <div className='p-5 flex flex-col'>
             <div className='rounded-xl overflow-hidden'>
-              <img src={product.image}></img>
+              <img src={products.image}></img>
             </div>
-            <h5 className='text-2xl md:text-3xl font-medium mt-3'>{product.title}</h5>
-            <p className='text-slate-500 text-lg mt-3 '>{product.description}</p>
+            <h5 className='text-2xl md:text-3xl font-medium mt-3'>{products.title}</h5>
+            <p className='text-slate-500 text-lg mt-3 '>{products.description}</p>
+            <p className='text-slate-500 text-lg mt-3 '>${products.price}</p>
             
-            <ItemCount/>
+            {goToCart ? <Link className='mt-2 bg-red-500 text-white p-2 rounded-sm text-center' to="/cart"> Terminar compra </Link> : <ItemCount initial={1} stock={5} onAdd={onAdd}/>}
           </div>
         </div>
     </div>

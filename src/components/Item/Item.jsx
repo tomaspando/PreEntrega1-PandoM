@@ -2,8 +2,13 @@ import ItemList from '../ItemDetailContainer/ItemDetailContainer'
 import { Button, Card } from 'react-bootstrap'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../Context/CartContext'
 
 const Item = ({product}) => {
+  const nombre = useContext(CartContext)
+
+
   return (
     <div className='flex items-center justify-center min-h-screen container mx-auto w-50'>        
         <div className='rounded-xl shadow-lg'>
