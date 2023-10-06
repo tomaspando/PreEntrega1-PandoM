@@ -18,7 +18,7 @@ const Item = ({product}) => {
             </div>
             <h5 className='text-2xl md:text-3xl font-medium mt-3'>{product.title}</h5>
             <p className='text-slate-500 text-lg mt-3 '>{product.description}</p>
-            <Link to={`/item/${product.id}`} className='text-center bg-red-600 text-white py-2 rounded-lg font-semibold mt-4 hover:bg-red-500 focus:scale-95 transition-all duration-200 ease-out'>Ver Más</Link>
+            <Link to={`/item/${product.id}`} className='text-center bg-red-500 text-white py-2 rounded-lg font-semibold mt-4 hover:bg-red-500 focus:scale-95 transition-all duration-200 ease-out'>Ver Más</Link>
           </div>
         </div>
     </div>

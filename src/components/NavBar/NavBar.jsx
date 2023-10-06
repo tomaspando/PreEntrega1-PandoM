@@ -12,9 +12,9 @@ const NavBar = () => {
     
     return (
       <Navbar bg="black" expand="lg" variant="dark">
-      <Container>
+      <Container >
         <Link to="/">
-          <Navbar.Brand>
+          <Navbar.Brand >
               <img
                 src={logoRF}
                 width="70"

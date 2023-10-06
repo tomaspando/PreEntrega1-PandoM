@@ -31,8 +31,10 @@ const Cart = ({product}) => {
   if(cart.length === 0){
     return (
       <>
-        <p>No hay elementos en el carrito</p>
-        <Link to="/">Hacer compras</Link>
+        <div className='container m-3 flex items-center justify-center flex-col'>
+          <h2 className='font-black text-3xl text-center'>No hay elementos en el carrito</h2>
+          <Link className='bg-green-500 w-auto p-3 text-white uppercase font-bold hover:bg-green-600 cursor-pointer transition-all m-3 rounded-lg' to="/">Hacer compras</Link>
+        </div>
       </>
     )
   }
@@ -45,13 +47,13 @@ const Cart = ({product}) => {
       <div className="text-center p-3 bg-slate-50   rounded-md mt-3">
             <div className="flex text-center justify-center">
      
-                <span className="border-2 w-2/4 p-2 bg-white rounded-sm">Total: ${totalPrice()}</span>
+                <span className="border-2 w-2/4 p-2 bg-white rounded-lg font-bold">Total: ${totalPrice()}</span>
 
             </div>
-            <div className="mt-2  bg-red-500 text-white p-2 rounded-sm">
+            <div className="mt-2  bg-red-500 text-white p-2 rounded-lg">
                 <button className='' onClick={() => clearCart()}>Vaciar Carrito</button>
             </div>
-            <div className="mt-2 bg-green-500 text-white p-2 rounded-sm">
+            <div className="mt-2 bg-green-500 text-white p-2 rounded-lg">
                 <Link className='' to="/checkout">Finalizar compra</Link>
             </div>
       </div>

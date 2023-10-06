@@ -16,11 +16,11 @@ const ItemDetail = ({products}) => {
   }
   
   return (
-    <div className='flex items-center justify-center min-h-screen container mx-auto w-50'>        
+    <div className='container flex items-center justify-center min-h-screen w-screen'>        
         <div className='rounded-xl shadow-lg'>
           <div className='p-5 flex flex-col'>
-            <div className='rounded-xl overflow-hidden'>
-              <img src={products.image}></img>
+            <div className='flex items-center justify-center rounded-xl overflow-hidden'>
+              <img className='sm:w-2/5 md:w-2/5 lg:w-1/5' src={products.image}></img>
             </div>
             <h5 className='text-2xl md:text-3xl font-medium mt-3'>{products.title}</h5>
             <p className='text-slate-500 text-lg mt-3 '>{products.description}</p>
